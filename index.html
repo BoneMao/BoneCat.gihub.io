@@ -14,9 +14,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/APlayer.min.css">
 				<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 				<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
+
 	<style type="text/css">
 		/*链接按钮*/
 		.abtn{
@@ -41,6 +43,12 @@
 		}
 		.abtn:active{
 		    box-shadow:0px 0px 5px 1px #FF0000;
+		}
+		.player{
+			width: 360px;
+    		margin: 160px auto;
+    		height: 75px;
+    		border-radius: 10px;
 		}
 	</style>
 	<body class="landing">
@@ -68,6 +76,11 @@
 							</p>
 						</header>
 						<span class="image"><img src="images/head_portrait.jpg" alt="骨猫" /></span>
+						<div class="player">
+							<div id="musicplay" class="aplayer">
+									
+							</div>
+						</div>
 					</div>
 					<a href="#one" class="goto-next scrolly">Next</a>
 				</section>
@@ -133,10 +146,13 @@
 							<h2 style="text-align: center;">休息一下</h2>
 							<h5><p style="color: #FFC0CB; text-align:center;">工作之余没事来看看啊</p></h5>
 						</header>
-						<p><!-- 各种动漫网站源码的下载，弹幕网，个人引导页，导航网站，只要是动漫风的网页都很喜欢	 --></p>
+						<!-- <p>各种动漫网站源码的下载，弹幕网，个人引导页，导航网站，只要是动漫风的网页都很喜欢	 </p>
 						<ul class="actions">
-							<li><!-- <a href="http://www.qqshen.com" target="_blank" class="button">进入萌源码</a> --></li>
-						</ul>
+							<li><a href="http://www.qqshen.com" target="_blank" class="button">进入萌源码</a></li>
+						</ul> -->
+						<div style="float: left;">
+							<a class= "abtn"  target="view_frame" href="https://www.bilibili.com/" title="B站">B站</a> <a class= "abtn"  target="view_frame" href="http://www.silisili.cc/" title="S站">S站</a> <a class= "abtn"  target="view_frame" href="http://www.silisili.cc/" title="S站">S站</a> <a class= "abtn"  target="view_frame" href="https://www.yunbtv.com/" title="追剧必看">云播TV</a> 
+						</div>
 					</div>
 					<a href="#four" class="goto-next scrolly">Next</a>
 				</section>
@@ -202,14 +218,40 @@
 		</div>
 
 		<!-- Scripts -->
+		<script type="text/javascript" src="assets/js/APlayer.min.js"></script>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?896657cfd762627291ee7bf931a8b164";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?896657cfd762627291ee7bf931a8b164";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	var palyer = new APlayer({
+			elements:document.getElementById('musicplay'),
+			narrow:false,
+			autoplay:true,
+			showlrc:false,
+			volume:'0.4',
+			loop:'all',	
+			order:'list',
+			audio:[
+				{
+					name:'太阳',
+					artist:'邱振哲',
+					url:'music/ty.mp3',
+					cover:'images/head_portrait.jpg'
+				},{
+					name:'超越时空的想念',
+					artist:'犬夜叉',
+					url:'music/cyskdxn.mp3',
+					cover:'images/head_portrait.jpg'
+				}
+			]
+		})
+		palyer.init();
+		player.	player();
+		
 </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -219,5 +261,6 @@ var _hmt = _hmt || [];
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			
 
 	</body>

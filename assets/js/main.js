@@ -13,7 +13,7 @@
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)'
 	});
-
+	
 	$(function() {
 
 		var	$window = $(window),
@@ -300,6 +300,7 @@
 
 			$banner
 				._parallax();
+
 
 	});
 
